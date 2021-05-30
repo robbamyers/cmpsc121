@@ -27,7 +27,7 @@ int main() {
     salesRevenue, saleCommission, saleCost, totalProfitOrLoss;
 
     // user prompt
-    cout << "Enter number of shares purchased, purchase price of stock, commission rate, and salesprice:" << endl;
+    cout << "Enter number of shares purchased, purchase price of stock, commission rate, and sale price:" << endl;
 
     // read in values from user
     cin >> shareCount >> purchasePrice >> commissionRate >> salePrice;
@@ -38,7 +38,7 @@ int main() {
     totalPurcahseCost = purchaseCost + purchaseCommissionCost;
     salesRevenue = shareCount * salePrice;
     saleCommission = commissionRate * salesRevenue;
-    saleCost = salesRevenue - saleCommission;
+    saleCost = salesRevenue + saleCommission;
     totalProfitOrLoss = saleCost - totalPurcahseCost;
 
     // display transaction details to user
@@ -56,3 +56,17 @@ int main() {
 
     return 0;
 }
+/* Sample Execution:
+Enter number of shares purchased, purchase price of stock, commission rate, and salesprice:
+1000 23.12 .01 25.67
+    ************ TRANSACTION DETAILS *************
+    Cost of stock before commission    $23120.00
+             Commission on purchase    $231.20
+             Total cost of purchase    $23351.20
+
+     Sale revenue before commission    $25670.00
+                Commissions on sale    $256.70
+                 Total cost of sale    $25413.30
+
+             Profit or loss on sale    $2062.10
+*/
