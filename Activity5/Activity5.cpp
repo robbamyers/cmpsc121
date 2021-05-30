@@ -36,9 +36,23 @@ int main() {
     purchaseCost = shareCount * purchasePrice;
     purchaseCommissionCost = commissionRate * purchaseCost;
     totalPurcahseCost = purchaseCost + purchaseCommissionCost;
-    cout << "    ************ TRANSACTION DETAILS *************" << endl;
+    salesRevenue = shareCount * salePrice;
+    saleCommission = commissionRate * salesRevenue;
+    saleCost = salesRevenue - saleCommission;
+    totalProfitOrLoss = saleCost - totalPurcahseCost;
 
-    cout << purchaseCost << endl << purchaseCommissionCost << endl << totalPurcahseCost;
+    // display transaction details to user
+    cout << "    ************ TRANSACTION DETAILS *************" << endl;
+    cout << fixed << setprecision(2); // set precision to two decimal places
+    cout << setw(35) << "Cost of stock before commission" << setw(5) << "$" << purchaseCost << endl;
+    cout << setw(35) << "Commission on purchase" << setw(5) << "$" << purchaseCommissionCost << endl;
+    cout << setw(35) << "Total cost of purchase" << setw(5) << "$" << totalPurcahseCost << endl;
+    cout << endl;
+    cout << setw(35) << "Sale revenue before commission" << setw(5) << "$" << salesRevenue << endl;
+    cout << setw(35) << "Commissions on sale" << setw(5) << "$" << saleCommission << endl;
+    cout << setw(35) << "Total cost of sale" << setw(5) << "$" << saleCost << endl;
+    cout << endl;
+    cout << setw(35) << "Profit or loss on sale" << setw(5) << "$" << totalProfitOrLoss;
 
     return 0;
 }

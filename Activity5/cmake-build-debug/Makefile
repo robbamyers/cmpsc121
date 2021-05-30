@@ -142,32 +142,32 @@ Activity5/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity5.dir/build.make CMakeFiles/Activity5.dir/build
 .PHONY : Activity5/fast
 
-main.o: main.cpp.o
+Activity5.o: Activity5.cpp.o
 
-.PHONY : main.o
+.PHONY : Activity5.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity5.dir/build.make CMakeFiles/Activity5.dir/main.cpp.o
-.PHONY : main.cpp.o
+Activity5.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity5.dir/build.make CMakeFiles/Activity5.dir/Activity5.cpp.o
+.PHONY : Activity5.cpp.o
 
-main.i: main.cpp.i
+Activity5.i: Activity5.cpp.i
 
-.PHONY : main.i
+.PHONY : Activity5.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity5.dir/build.make CMakeFiles/Activity5.dir/main.cpp.i
-.PHONY : main.cpp.i
+Activity5.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity5.dir/build.make CMakeFiles/Activity5.dir/Activity5.cpp.i
+.PHONY : Activity5.cpp.i
 
-main.s: main.cpp.s
+Activity5.s: Activity5.cpp.s
 
-.PHONY : main.s
+.PHONY : Activity5.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity5.dir/build.make CMakeFiles/Activity5.dir/main.cpp.s
-.PHONY : main.cpp.s
+Activity5.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity5.dir/build.make CMakeFiles/Activity5.dir/Activity5.cpp.s
+.PHONY : Activity5.cpp.s
 
 # Help Target
 help:
@@ -178,9 +178,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Activity5"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Activity5.o"
+	@echo "... Activity5.i"
+	@echo "... Activity5.s"
 .PHONY : help
 
 
