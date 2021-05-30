@@ -57,16 +57,16 @@ int main() {
     return 0;
 }
 /* Sample Execution:
-Enter number of shares purchased, purchase price of stock, commission rate, and salesprice:
-1000 23.12 .01 25.67
+Enter number of shares purchased, purchase price of stock, commission rate, and sale price:
+1000 26.23 .02 30.12
     ************ TRANSACTION DETAILS *************
-    Cost of stock before commission    $23120.00
-             Commission on purchase    $231.20
-             Total cost of purchase    $23351.20
+    Cost of stock before commission    $26230.00
+             Commission on purchase    $524.60
+             Total cost of purchase    $26754.60
 
-     Sale revenue before commission    $25670.00
-                Commissions on sale    $256.70
-                 Total cost of sale    $25413.30
+     Sale revenue before commission    $30120.00
+                Commissions on sale    $602.40
+                 Total cost of sale    $30722.40
 
-             Profit or loss on sale    $2062.10
+             Profit or loss on sale    $3967.80
 */
