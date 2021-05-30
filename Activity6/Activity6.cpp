@@ -2,7 +2,7 @@
 //Class:      	    CMPSC 121
 //Activity:   	    06
 //File:             /Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/CMPSC121/Activity6.cpp
-//Purpose: 	        In
+//Purpose: 	        Magic date
 /********************************************************************\
 * Academic Integrity Affidavit:                                      *
 *                                                                    *
@@ -18,8 +18,23 @@
 // Sources of logic assistance: None
 
 #include <iostream>
+using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    // variable declaration
+    int month, day, year;
+    // prompt user
+    cout << "Please enter a numeric, month, day and two digit year, separated by spaces:" << endl;
+
+    // read in values from user
+    cin >> month >> day >> year;
+
+    // arithmetic
+    if (month * day == year){
+        cout << "It's a MAGIC date!";
+    } else {
+        cout << "Sorry! Not a magic date.";
+    }
+
     return 0;
 }
