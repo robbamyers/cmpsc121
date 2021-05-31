@@ -76,27 +76,27 @@ include CMakeFiles/Experiment04.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Experiment04.dir/flags.make
 
-CMakeFiles/Experiment04.dir/main.cpp.o: CMakeFiles/Experiment04.dir/flags.make
-CMakeFiles/Experiment04.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Experiments/Experiment04/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Experiment04.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Experiment04.dir/main.cpp.o -c "/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Experiments/Experiment04/main.cpp"
+CMakeFiles/Experiment04.dir/experiment04.cpp.o: CMakeFiles/Experiment04.dir/flags.make
+CMakeFiles/Experiment04.dir/experiment04.cpp.o: ../experiment04.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Experiments/Experiment04/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Experiment04.dir/experiment04.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Experiment04.dir/experiment04.cpp.o -c "/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Experiments/Experiment04/experiment04.cpp"
 
-CMakeFiles/Experiment04.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Experiment04.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Experiments/Experiment04/main.cpp" > CMakeFiles/Experiment04.dir/main.cpp.i
+CMakeFiles/Experiment04.dir/experiment04.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Experiment04.dir/experiment04.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Experiments/Experiment04/experiment04.cpp" > CMakeFiles/Experiment04.dir/experiment04.cpp.i
 
-CMakeFiles/Experiment04.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Experiment04.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Experiments/Experiment04/main.cpp" -o CMakeFiles/Experiment04.dir/main.cpp.s
+CMakeFiles/Experiment04.dir/experiment04.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Experiment04.dir/experiment04.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Experiments/Experiment04/experiment04.cpp" -o CMakeFiles/Experiment04.dir/experiment04.cpp.s
 
 # Object files for target Experiment04
 Experiment04_OBJECTS = \
-"CMakeFiles/Experiment04.dir/main.cpp.o"
+"CMakeFiles/Experiment04.dir/experiment04.cpp.o"
 
 # External object files for target Experiment04
 Experiment04_EXTERNAL_OBJECTS =
 
-Experiment04: CMakeFiles/Experiment04.dir/main.cpp.o
+Experiment04: CMakeFiles/Experiment04.dir/experiment04.cpp.o
 Experiment04: CMakeFiles/Experiment04.dir/build.make
 Experiment04: CMakeFiles/Experiment04.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Experiments/Experiment04/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Experiment04"
