@@ -21,6 +21,7 @@
 using namespace std;
 
 int main() {
+
     // variable declaration
     int month, day, year;
     // prompt user
@@ -29,7 +30,7 @@ int main() {
     // read in values from user
     cin >> month >> day >> year;
 
-    // arithmetic
+    // conditional
     if (month * day == year){
         cout << "It's a MAGIC date!";
     } else {
@@ -38,3 +39,9 @@ int main() {
 
     return 0;
 }
+/* Sample Execution:
+Please enter a numeric, month, day and two digit year, separated by spaces:
+3 6 18
+It's a MAGIC date!
+Process finished with exit code 0
+ */
