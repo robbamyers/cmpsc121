@@ -18,8 +18,43 @@
 // Sources of logic assistance: None
 
 #include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+const int TORQUECONSTANT = 63000;
+const int DIAMETERCONSTANT = 16;
+const int SPACING = 18;
+
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+
+    // variable delcaration
+    int p, n, s;
+    float T, D;
+
+    // prompt user
+    cout << "Enter values for horsepower(p), rpm(n) and shear strength(s):" << endl;
+
+    // read in values from user
+    cin >> p >> n >> s;
+
+    // arithmetic
+    T = TORQUECONSTANT * (p/static_cast<double>(n));
+    D = pow((DIAMETERCONSTANT*T)/s,0.333);
+
+    // return calculated values to user
+    cout << fixed << setprecision(3);
+    cout << setw(SPACING) << "p(HP)" << setw(SPACING) << "n(rpm)" << setw(SPACING) << "s(psi)" << setw(SPACING) << "T(torque)" << setw(SPACING) << "D(diameter)" << endl;
+    cout << setw(SPACING) << p << setw(SPACING) << n << setw(SPACING) << s << setw(SPACING) << T << setw(14) << D << " inches";
+
     return 0;
 }
+
+/* Sample Execution:
+Enter values for horsepower(p), rpm(n) and shear strength(s):
+300 3000 6000
+             p(HP)            n(rpm)            s(psi)         T(torque)       D(diameter)
+               300              3000              6000          6300.000         2.559 inches
+Process finished with exit code 0
+*/
