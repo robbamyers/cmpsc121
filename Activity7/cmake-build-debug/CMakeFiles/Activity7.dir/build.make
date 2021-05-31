@@ -76,27 +76,27 @@ include CMakeFiles/Activity7.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Activity7.dir/flags.make
 
-CMakeFiles/Activity7.dir/main.cpp.o: CMakeFiles/Activity7.dir/flags.make
-CMakeFiles/Activity7.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity7/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Activity7.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Activity7.dir/main.cpp.o -c "/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity7/main.cpp"
+CMakeFiles/Activity7.dir/Activity7.cpp.o: CMakeFiles/Activity7.dir/flags.make
+CMakeFiles/Activity7.dir/Activity7.cpp.o: ../Activity7.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity7/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Activity7.dir/Activity7.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Activity7.dir/Activity7.cpp.o -c "/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity7/Activity7.cpp"
 
-CMakeFiles/Activity7.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Activity7.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity7/main.cpp" > CMakeFiles/Activity7.dir/main.cpp.i
+CMakeFiles/Activity7.dir/Activity7.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Activity7.dir/Activity7.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity7/Activity7.cpp" > CMakeFiles/Activity7.dir/Activity7.cpp.i
 
-CMakeFiles/Activity7.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Activity7.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity7/main.cpp" -o CMakeFiles/Activity7.dir/main.cpp.s
+CMakeFiles/Activity7.dir/Activity7.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Activity7.dir/Activity7.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity7/Activity7.cpp" -o CMakeFiles/Activity7.dir/Activity7.cpp.s
 
 # Object files for target Activity7
 Activity7_OBJECTS = \
-"CMakeFiles/Activity7.dir/main.cpp.o"
+"CMakeFiles/Activity7.dir/Activity7.cpp.o"
 
 # External object files for target Activity7
 Activity7_EXTERNAL_OBJECTS =
 
-Activity7: CMakeFiles/Activity7.dir/main.cpp.o
+Activity7: CMakeFiles/Activity7.dir/Activity7.cpp.o
 Activity7: CMakeFiles/Activity7.dir/build.make
 Activity7: CMakeFiles/Activity7.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity7/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Activity7"
