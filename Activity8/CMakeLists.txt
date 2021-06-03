@@ -3,4 +3,4 @@ project(Activity8)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Activity8 main.cpp)
+add_executable(Activity8 Activity08.cpp)
