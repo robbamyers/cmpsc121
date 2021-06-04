@@ -2,7 +2,7 @@
 //Class:      	    CMPSC 121
 //Activity:   	    09
 //File:             /Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity9/Activity9.cpp
-//Purpose: 	        Use conditional logic to display where a Cartesian coordinate resides
+//Purpose: 	        Practice with parsing an integer value using while loops, conditionals, and modulo/division operators
 /********************************************************************\
 * Academic Integrity Affidavit:                                      *
 *                                                                    *
@@ -18,8 +18,47 @@
 // Sources of logic assistance: None
 
 #include <iostream>
+using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    // variable declaration
+    int userInput;
+    int sum = 0;
+    int userInputFinalOutput;
+
+    // prompt user
+    cout << "Enter an integer greater than 10000: ";
+
+    // read in integer from user
+    cin >> userInput;
+
+    // store original user input in second variable
+    userInputFinalOutput = userInput;
+
+    // input validation
+    while(userInput < 10000){
+        cout << userInput << " is not greater than 10000" << endl;
+        cout << "Enter an integer greater than 10000: ";
+        cin >> userInput;
+    }
+
+    // get the tens place value, check if it's even and if so add it to the sum, stop when all digits have been checked
+    while(userInput != 0){
+        int tensPlaceValue = 0;
+        tensPlaceValue = userInput % 10;
+        if(tensPlaceValue % 2 == 0){
+            sum += tensPlaceValue;
+        }
+        userInput /= 10;
+    }
+    // display output to user
+    cout << "The sum of the even digits of " << userInputFinalOutput << " is " << sum;
+
+
     return 0;
 }
+/* Sample Execution:
+Enter an integer greater than 10000: 248970158
+The sum of the even digits of 248970158 is 22
+Process finished with exit code 0
+ */
