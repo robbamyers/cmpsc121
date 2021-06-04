@@ -27,7 +27,7 @@ const double STANDARDPRICE = 12.00, PREMIERPRICE = 25.00,
 const int STANDARDLIMIT = 60, PREMIERDAYLIMIT = 75, PREMIERNIGHTLIMIT = 100;
 
 int main() {
-    // variable delcaration
+    // variable declaration
     string accountNumber;
     string planNameExpanded;
     char plan;
@@ -63,26 +63,39 @@ int main() {
                     cout << "Enter nighttime minutes:" << endl;
                     cin >> premierNightMinutes;
                     amountDue = PREMIERPRICE;
+                    break;
     }
 
+    // conditional statement to calculate amount due
     if(standardMinutes > STANDARDLIMIT){
         amountDue += (standardMinutes * STANDARDRATE);
     }
+    else if ((premierDayMinutes > PREMIERDAYLIMIT) && (premierNightMinutes > PREMIERNIGHTLIMIT)){
+        amountDue += ((premierDayMinutes - PREMIERDAYLIMIT) * PREMIERDAYRATE);
+        amountDue += ((premierNightMinutes - PREMIERNIGHTLIMIT) * PREMIERNIGHTRATE);
+    }
     else if (premierDayMinutes > PREMIERDAYLIMIT){
-        amountDue += (premierDayMinutes * PREMIERDAYRATE);
+        amountDue += ((premierDayMinutes - PREMIERDAYLIMIT) * PREMIERDAYRATE);
     }
     else if (premierNightMinutes > PREMIERNIGHTLIMIT){
-        amountDue += (premierNightMinutes * PREMIERNIGHTRATE);
+        amountDue += ((premierNightMinutes - PREMIERNIGHTLIMIT) * PREMIERNIGHTRATE);
     }
 
+    // set precision of output to two decimal places
     cout << fixed << setprecision(2);
+
+    // display output
     cout << "=========Zippy Sell Phone Company=========" << endl;
-    cout << "Account Number: " << accountNumber;
-    cout << "Service Type: " << planNameExpanded << endl;
+    cout << "Account Number: " << setw(15) << accountNumber << endl;
+    cout << "Service Type: " << setw(17) << planNameExpanded << endl;
+
+    // depending on plan selected display either daytime/nighttime minutes or just minutes
     switch(plan){
         case 'p':   cout << "Daytime Minutes:" << setw(15) << premierDayMinutes << endl;
-                    cout << "Nighttime Minutes:" << setw(15) << premierNightMinutes << endl;
+                    cout << "Nighttime Minutes:" << setw(13) << premierNightMinutes << endl;
+                    break;
         case 's':   cout << "Minutes" << setw(15) << standardMinutes << endl;
+                    break;
     }
     cout << "Amount Due: $" << amountDue << endl;
 
@@ -90,4 +103,19 @@ int main() {
     return 0;
 }
 
+/* Sample Execution:
+Enter account number and service code <s or p>:
+AG-2654 p
+Enter daytime minutes:
+85
+Enter nighttime minutes:
+110
+=========Zippy Sell Phone Company=========
+Account Number:         AG-2654
+Service Type:           PREMIER
+Daytime Minutes:             85
+Nighttime Minutes:          110
+Amount Due: $26.50
 
+Process finished with exit code 0
+ */
