@@ -142,32 +142,32 @@ Activity8/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity8.dir/build.make CMakeFiles/Activity8.dir/build
 .PHONY : Activity8/fast
 
-main.o: main.cpp.o
+Activity08.o: Activity08.cpp.o
 
-.PHONY : main.o
+.PHONY : Activity08.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity8.dir/build.make CMakeFiles/Activity8.dir/main.cpp.o
-.PHONY : main.cpp.o
+Activity08.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity8.dir/build.make CMakeFiles/Activity8.dir/Activity08.cpp.o
+.PHONY : Activity08.cpp.o
 
-main.i: main.cpp.i
+Activity08.i: Activity08.cpp.i
 
-.PHONY : main.i
+.PHONY : Activity08.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity8.dir/build.make CMakeFiles/Activity8.dir/main.cpp.i
-.PHONY : main.cpp.i
+Activity08.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity8.dir/build.make CMakeFiles/Activity8.dir/Activity08.cpp.i
+.PHONY : Activity08.cpp.i
 
-main.s: main.cpp.s
+Activity08.s: Activity08.cpp.s
 
-.PHONY : main.s
+.PHONY : Activity08.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity8.dir/build.make CMakeFiles/Activity8.dir/main.cpp.s
-.PHONY : main.cpp.s
+Activity08.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity8.dir/build.make CMakeFiles/Activity8.dir/Activity08.cpp.s
+.PHONY : Activity08.cpp.s
 
 # Help Target
 help:
@@ -178,9 +178,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Activity8"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Activity08.o"
+	@echo "... Activity08.i"
+	@echo "... Activity08.s"
 .PHONY : help
 
 
