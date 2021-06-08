@@ -3,4 +3,4 @@ project(Experiment06)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Experiment06 main.cpp)
+add_executable(Experiment06 Experiment06.cpp)
