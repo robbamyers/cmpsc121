@@ -24,19 +24,28 @@ using namespace std;
 
 int main() {
 
+    // variable declaration
     int numDayOfWeek;
     string strDayOfWeek;
     char continuation;
 
+    // outer loop to run program while user wishes to continue
     do
     {
+        // prompt user and read in day of week choice
         cout << "Enter a day of week value: ";
         cin >> numDayOfWeek;
+
+        // input validation
         while(numDayOfWeek < 1 || numDayOfWeek > 7) {
+
+            // inform user of invalid input, reprompt user and read in new value
             cout << numDayOfWeek << " is invalid" << endl;
             cout << "Enter a day of week value: ";
             cin >> numDayOfWeek;
         }
+
+        // conditionally output day of week based on user input
         if(numDayOfWeek == 1){
             cout << "Sunday" << endl;
         }
@@ -58,10 +67,15 @@ int main() {
         else if (numDayOfWeek == 7){
             cout << "Saturday" << endl;
         }
+
+        // prompt user if they want to continue
         cout << "Do you wish to continue?" << endl;
+
+        // read in user decision to continue
         cin >> continuation;
+
     } while (toupper(continuation) == 'Y');
-    cout << "Program terminated. Thanks for using the Day of the Week converter!";
+    cout << "Program terminated. Thank you for using the day of the week converter!";
     return 0;
 }
 /* Sample Execution:
