@@ -24,27 +24,32 @@ using namespace std;
 const string TRANSACTION_NUMBER = "Transaction #";
 
 int main() {
+    // variable declaration. clion recommends initializing variables
     int     unitsSold = 0, totalNumberOfTransactions = 0, counter = 1;
-    float   unitPrice, transactionTotal, averageUnitsPerOrder, averageRevenue,
-            largestTransaction, smallestTransaction, totalRevenue;
+    float   unitPrice = 0, transactionTotal = 0, averageUnitsPerOrder = 0, averageRevenue = 0,
+            largestTransaction = 0, smallestTransaction = 0, totalRevenue = 0;
 
     // prompt user
     cout << "Enter transactions -99 0 to stop" << endl;
-    // continue until user enters -99 0
 
+    // continue until user enters -99 0
     do
     {
+        // display transaction number and read in units sold and unit price from user
         cout << TRANSACTION_NUMBER << counter << ": ";
         cin >> unitsSold >> unitPrice;
+
+        // arithmetic
         transactionTotal = unitsSold * unitPrice;
         totalRevenue += transactionTotal;
         totalNumberOfTransactions += unitsSold;
 
-        // check if tx total is larger than previous iteration
+        // check if tx total is larger than previous iteration's largest Transaction
         if(transactionTotal > largestTransaction){
             largestTransaction = transactionTotal;
         }
-        /*  on first iteration (smallestTransaction == 0), set smallest tx
+        /*
+            on first iteration (smallestTransaction == 0), set smallest tx
             then check on the next iteration if tx total is smaller than current
             smallest tx. Also ensure tx is not terminating tx
         */
@@ -52,9 +57,13 @@ int main() {
             smallestTransaction = transactionTotal;
         }
 
-        counter ++;
+        counter++;
     } while(unitsSold != 99 && unitPrice != 0);
 
+    /*  calculate averages based on running totals, add 99 to cancel terminating tx
+        and subtract 2 from counter due to counter initialized at 1 rather than 0 and
+        terminating transaction counting as loop
+    */
     averageUnitsPerOrder = (totalNumberOfTransactions + 99.0)/(counter - 2);
     averageRevenue = totalRevenue/(counter - 2);
 
