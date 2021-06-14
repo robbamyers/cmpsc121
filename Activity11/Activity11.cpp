@@ -26,7 +26,7 @@ int main() {
     // open file
     ifstream partsFile("/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity11/parts.txt");
 
-    // variable declaration
+    // variable declarations
     string partNumber;
     char partClass;
     int stock;
@@ -35,35 +35,58 @@ int main() {
     double lineItemValue = 0;
     double partAInvTotal, partBInvTotal, partCInvTotal, partDInvTotal, unknownTotal;
 
-    while(partsFile >> partNumber >> partClass >> stock >> price){
-        if (partClass == 'A'){
-            partACounter++;
-            lineItemValue = stock * price;
-            partAInvTotal += lineItemValue;
-        }
-        else if(partClass == 'B'){
-            partBCounter++;
-            lineItemValue = stock * price;
-            partBInvTotal += lineItemValue;
-        }
-        else if(partClass == 'C'){
-            partCCounter++;
-            lineItemValue = stock * price;
-            partCInvTotal += lineItemValue;
-        }
-        else if(partClass == 'D'){
-            partDCounter++;
-            lineItemValue = stock * price;
-            partDInvTotal += lineItemValue;
-        }
-        else{
-            unknownCounter++;
-            lineItemValue = stock * price;
-            unknownTotal += lineItemValue;
-        }
-
+    // ensure file can be read
+    if(partsFile.fail()){
+        cout << "Unable to open file.";
     }
+    else {
+        // read values until the end of the document is reached
+        while (partsFile >> partNumber >> partClass >> stock >> price) {
+            // conditional expression to check what class the part is
+            if (partClass == 'A'){
+                partACounter++;
+                // arithmetic to calculate the value of that line
+                lineItemValue = stock * price;
+                // add to running total
+                partAInvTotal += lineItemValue;
+            } else if (partClass == 'B'){
+                partBCounter++;
+                lineItemValue = stock * price;
+                partBInvTotal += lineItemValue;
+            } else if (partClass == 'C'){
+                partCCounter++;
+                lineItemValue = stock * price;
+                partCInvTotal += lineItemValue;
+            } else if (partClass == 'D') {
+                partDCounter++;
+                lineItemValue = stock * price;
+                partDInvTotal += lineItemValue;
+            } else {
+                unknownCounter++;
+                lineItemValue = stock * price;
+                unknownTotal += lineItemValue;
+            }
+        }
+    }
+    // close file
+    partsFile.close();
+
     cout << fixed << setprecision(2);
-    cout << "===============Inventory Reports==============" << endl;
+    cout << "==================Inventory Reports===================" << endl;
+    cout << "A-Parts" << setw(10) << "Count: " << partACounter << setw(25) << "Value of Inventory: " << setw(10) << partAInvTotal << endl;
+    cout << "B-Parts" << setw(10) << "Count: " << partBCounter << setw(25) << "Value of Inventory: " << setw(10) <<  partBInvTotal << endl;
+    cout << "C-Parts" << setw(10) << "Count: " << partCCounter << setw(25) << "Value of Inventory: " << setw(10) <<  partCInvTotal << endl;
+    cout << "D-Parts" << setw(10) << "Count: " << partDCounter << setw(25) << "Value of Inventory: " << setw(10) <<  partDInvTotal << endl;
+    cout << "Unknown" << setw(10) << "Count: " << unknownCounter << setw(25) << "Value of Inventory: " << setw(10) <<  unknownTotal << endl;
     return 0;
 }
+/* Sample Execution:
+==================Inventory Reports===================
+A-Parts   Count: 85     Value of Inventory:  191180.07
+B-Parts   Count: 69     Value of Inventory:   74764.16
+C-Parts   Count: 77     Value of Inventory:   50322.30
+D-Parts   Count: 60     Value of Inventory:   22416.49
+Unknown   Count: 13     Value of Inventory:    4282.68
+
+Process finished with exit code 0
+ */
