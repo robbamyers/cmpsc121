@@ -27,42 +27,43 @@ int main() {
     ifstream partsFile("/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity11/parts.txt");
 
     // variable declaration
+    string partNumber;
+    char partClass;
+    int stock;
+    float price;
     int partACounter = 0, partBCounter = 0, partCCounter = 0, partDCounter = 0, unknownCounter = 0;
-    int valueOfInventory = 0;
+    double lineItemValue = 0;
+    double partAInvTotal, partBInvTotal, partCInvTotal, partDInvTotal, unknownTotal;
 
-    // skip first value
-    string readFileValue;
-    int readPosition = 0;
-    int stockReadPosition = 2;
-    string stock;
-    int priceReadPosition = 3;
-    string price;
-    string value;
-    while(partsFile >> readFileValue){
-        if(readFileValue == "A"){
+    while(partsFile >> partNumber >> partClass >> stock >> price){
+        if (partClass == 'A'){
             partACounter++;
+            lineItemValue = stock * price;
+            partAInvTotal += lineItemValue;
         }
-        else if(readFileValue == "B"){
+        else if(partClass == 'B'){
             partBCounter++;
+            lineItemValue = stock * price;
+            partBInvTotal += lineItemValue;
         }
-
-        if(stockReadPosition == readPosition){
-            cout << "Stock: " << readFileValue << endl;
-            stock = readFileValue;
-            stockReadPosition = readPosition + 4;
+        else if(partClass == 'C'){
+            partCCounter++;
+            lineItemValue = stock * price;
+            partCInvTotal += lineItemValue;
         }
-        else if(priceReadPosition == readPosition){
-            cout << "Price: " << readFileValue << endl;
-            price = readFileValue;
-            value = stock*price;
-            priceReadPosition = readPosition + 4;
+        else if(partClass == 'D'){
+            partDCounter++;
+            lineItemValue = stock * price;
+            partDInvTotal += lineItemValue;
         }
-
-        readPosition++;
+        else{
+            unknownCounter++;
+            lineItemValue = stock * price;
+            unknownTotal += lineItemValue;
+        }
 
     }
-    cout << partACounter << endl;
-    cout << partBCounter << endl;
-
+    cout << fixed << setprecision(2);
+    cout << "===============Inventory Reports==============" << endl;
     return 0;
 }
