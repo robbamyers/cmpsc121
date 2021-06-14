@@ -2,7 +2,7 @@
 //Class:      	    CMPSC 121
 //Activity:   	    11
 //File:             /Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/CMPSC121/Activity11/Activity11.cpp
-//Purpose: 	        Nested loop practice
+//Purpose: 	        Practice reading files
 /********************************************************************\
 * Academic Integrity Affidavit:                                      *
 *                                                                    *
@@ -18,8 +18,51 @@
 // Sources of logic assistance: None
 
 #include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    // open file
+    ifstream partsFile("/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity11/parts.txt");
+
+    // variable declaration
+    int partACounter = 0, partBCounter = 0, partCCounter = 0, partDCounter = 0, unknownCounter = 0;
+    int valueOfInventory = 0;
+
+    // skip first value
+    string readFileValue;
+    int readPosition = 0;
+    int stockReadPosition = 2;
+    string stock;
+    int priceReadPosition = 3;
+    string price;
+    string value;
+    while(partsFile >> readFileValue){
+        if(readFileValue == "A"){
+            partACounter++;
+        }
+        else if(readFileValue == "B"){
+            partBCounter++;
+        }
+
+        if(stockReadPosition == readPosition){
+            cout << "Stock: " << readFileValue << endl;
+            stock = readFileValue;
+            stockReadPosition = readPosition + 4;
+        }
+        else if(priceReadPosition == readPosition){
+            cout << "Price: " << readFileValue << endl;
+            price = readFileValue;
+            value = stock*price;
+            priceReadPosition = readPosition + 4;
+        }
+
+        readPosition++;
+
+    }
+    cout << partACounter << endl;
+    cout << partBCounter << endl;
+
     return 0;
 }

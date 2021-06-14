@@ -142,32 +142,32 @@ Activity11/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity11.dir/build.make CMakeFiles/Activity11.dir/build
 .PHONY : Activity11/fast
 
-main.o: main.cpp.o
+Activity11.o: Activity11.cpp.o
 
-.PHONY : main.o
+.PHONY : Activity11.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity11.dir/build.make CMakeFiles/Activity11.dir/main.cpp.o
-.PHONY : main.cpp.o
+Activity11.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity11.dir/build.make CMakeFiles/Activity11.dir/Activity11.cpp.o
+.PHONY : Activity11.cpp.o
 
-main.i: main.cpp.i
+Activity11.i: Activity11.cpp.i
 
-.PHONY : main.i
+.PHONY : Activity11.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity11.dir/build.make CMakeFiles/Activity11.dir/main.cpp.i
-.PHONY : main.cpp.i
+Activity11.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity11.dir/build.make CMakeFiles/Activity11.dir/Activity11.cpp.i
+.PHONY : Activity11.cpp.i
 
-main.s: main.cpp.s
+Activity11.s: Activity11.cpp.s
 
-.PHONY : main.s
+.PHONY : Activity11.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity11.dir/build.make CMakeFiles/Activity11.dir/main.cpp.s
-.PHONY : main.cpp.s
+Activity11.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity11.dir/build.make CMakeFiles/Activity11.dir/Activity11.cpp.s
+.PHONY : Activity11.cpp.s
 
 # Help Target
 help:
@@ -178,9 +178,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Activity11"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Activity11.o"
+	@echo "... Activity11.i"
+	@echo "... Activity11.s"
 .PHONY : help
 
 
