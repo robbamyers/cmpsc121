@@ -2,7 +2,7 @@
 //Class:      	    CMPSC 121
 //Activity:   	    12
 //File:             /Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/CMPSC121/Activity12/Activity12.cpp
-//Purpose: 	        Practice reading files
+//Purpose: 	        Practice with while loops
 /********************************************************************\
 * Academic Integrity Affidavit:                                      *
 *                                                                    *
