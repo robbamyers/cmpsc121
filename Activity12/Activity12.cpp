@@ -29,7 +29,7 @@ int main() {
         cin >> userInput;
     }while(userInput < 2);
     // output display starting with userInput
-    cout << "The Ulam Sequence starting from 10 is: " << userInput;
+    cout << "The Ulam Sequence starting from " << userInput << " is: " << userInput;
     // repeat while the number is greater than 1
     while(userInput > 1){
         // divide by 2 and display to user, while the value is even
@@ -47,3 +47,9 @@ int main() {
     }
     return 0;
 }
+/* Sample Execution:
+Please enter an integer greater or equal to 2
+200
+The Ulam Sequence starting from 200 is: 200 100 50 25 76 38 19 58 29 88 44 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1
+Process finished with exit code 0
+ */
