@@ -60,8 +60,8 @@ int main() {
     } while(counter < 10);
 
     // calculate average payout
-    averagePayout = totalPayoutCopy / 10;
-    cout << endl <<  "The average payout was " << averagePayout;
+    averagePayout = totalPayoutCopy / 10.0;
+    cout << endl <<  "The average payout was $" << averagePayout;
 
     return 0;
 }
