@@ -18,8 +18,16 @@
 // Sources of logic assistance: None
 
 #include <iostream>
+using namespace std;
+
+double calculateValue(int,double);
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    c
+
 }
+
+double calculateValue(int items, double cost){
+    double result = items * cost;
+    return result;
+};
