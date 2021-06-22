@@ -47,6 +47,7 @@ int main() {
         cout << "Do you have another purchase to enter? Y or N" << endl;
         cin >> continuation;
     }while(toupper(continuation) == 'Y');
+    cout << "Thank you!";
 }
 
 // function definition
@@ -62,6 +63,6 @@ Enter the number of items and cost: 8 43.19
 The extended amount is $345.52
 Do you have another purchase to enter? Y or N
 N
-
+Thank you!
 Process finished with exit code 0
  */
