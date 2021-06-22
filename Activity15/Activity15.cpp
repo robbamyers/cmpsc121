@@ -18,16 +18,50 @@
 // Sources of logic assistance: None
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
+// function prototype
 double calculateValue(int,double);
 
-int main() {
-    c
+// global variable for continuation
+char continuation;
 
+int main() {
+    do{
+        // local scope declaration
+        int items;
+        double cost;
+
+        // set precision to two decimal places
+        cout << fixed << setprecision(2);
+
+        // prompt user and read in values from user
+        cout << "Enter the number of items and cost: ";
+        cin >> items >> cost;
+
+        // call calculateValue function and pass in local scope variables as arguments
+        cout << "The extended amount is $" << calculateValue(items,cost) << endl;
+
+        // prompt user to enter another calculation and read in decision
+        cout << "Do you have another purchase to enter? Y or N" << endl;
+        cin >> continuation;
+    }while(toupper(continuation) == 'Y');
 }
 
+// function definition
 double calculateValue(int items, double cost){
-    double result = items * cost;
-    return result;
-};
+    return (items * cost);
+}
+/* Sample Execution:
+Enter the number of items and cost: 10 5.25
+The extended amount is $52.50
+Do you have another purchase to enter? Y or N
+Y
+Enter the number of items and cost: 8 43.19
+The extended amount is $345.52
+Do you have another purchase to enter? Y or N
+N
+
+Process finished with exit code 0
+ */
