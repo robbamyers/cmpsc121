@@ -24,12 +24,12 @@ using namespace std;
 void simulateAtBat();
 
 // global variables
-int thousandPossibilities;
+int     thousandPossibilities;
 double  out = 0, walk = 0,
         singleScore = 0, doubleScore = 0, tripleScore = 0,
         homeRun = 0,
         battingAverage = 0;
-char continuation;
+char    continuation;
 
 int main() {
     // seed random numbers on each iteration
@@ -37,13 +37,11 @@ int main() {
     // continue program until user says otherwise
     do{
         cout << "Simulation of the mighty Casey at-bat 1000 times:" << endl;
-
         // run 1000 iterations
-        for (int i = 0; i < 1000; i++) {
+        for(int i = 0; i < 1000; i++){
             // function call
             simulateAtBat();
         }
-
         // calculate battingAverage
         battingAverage = (singleScore + doubleScore + tripleScore + homeRun)/(1000 - walk);
         cout << fixed << setprecision(1);
@@ -65,7 +63,6 @@ int main() {
     cout << "Thanks for playing!";
     return 0;
 }
-
 // function definition
 void simulateAtBat(){
     // generate a random number between 1 and 1000
