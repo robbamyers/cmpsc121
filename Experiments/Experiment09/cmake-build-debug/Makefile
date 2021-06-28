@@ -142,32 +142,32 @@ Experiment09/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Experiment09.dir/build.make CMakeFiles/Experiment09.dir/build
 .PHONY : Experiment09/fast
 
-main.o: main.cpp.o
+Experiment09.o: Experiment09.cpp.o
 
-.PHONY : main.o
+.PHONY : Experiment09.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Experiment09.dir/build.make CMakeFiles/Experiment09.dir/main.cpp.o
-.PHONY : main.cpp.o
+Experiment09.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Experiment09.dir/build.make CMakeFiles/Experiment09.dir/Experiment09.cpp.o
+.PHONY : Experiment09.cpp.o
 
-main.i: main.cpp.i
+Experiment09.i: Experiment09.cpp.i
 
-.PHONY : main.i
+.PHONY : Experiment09.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Experiment09.dir/build.make CMakeFiles/Experiment09.dir/main.cpp.i
-.PHONY : main.cpp.i
+Experiment09.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Experiment09.dir/build.make CMakeFiles/Experiment09.dir/Experiment09.cpp.i
+.PHONY : Experiment09.cpp.i
 
-main.s: main.cpp.s
+Experiment09.s: Experiment09.cpp.s
 
-.PHONY : main.s
+.PHONY : Experiment09.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Experiment09.dir/build.make CMakeFiles/Experiment09.dir/main.cpp.s
-.PHONY : main.cpp.s
+Experiment09.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Experiment09.dir/build.make CMakeFiles/Experiment09.dir/Experiment09.cpp.s
+.PHONY : Experiment09.cpp.s
 
 # Help Target
 help:
@@ -178,9 +178,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Experiment09"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Experiment09.o"
+	@echo "... Experiment09.i"
+	@echo "... Experiment09.s"
 .PHONY : help
 
 
