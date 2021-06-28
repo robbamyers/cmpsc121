@@ -19,34 +19,44 @@
 #include <iostream>
 using namespace std;
 
-int calcBalance(int tx);
+double calculateBalance(double tx);
+void displayTotal(double runningTotal);
 
 int main() {
     char continuation;
-    do{
-        double tx = 0;
-        cout << "Enter your transaction. Positive for deposit. Negative for withdrawals" << endl;
+    double finalBalance;
+    do {
+        cout << "Please enter your transaction:" << endl << "$";
+        double tx;
         cin >> tx;
-        calcBalance(tx);
-
-        cout << "Do you have more transactions to enter? y/n" << endl;
+        finalBalance = calculateBalance(tx);
+        cout << "Enter another transaction? y/n" << endl;
         cin >> continuation;
     }while(toupper(continuation) == 'Y');
+    cout << "Your final balance is: $" << finalBalance;
     return 0;
 }
 
-int calcBalance(int tx){
-    static int currentBalance = 0;
-    currentBalance += tx;
-    if(currentBalance >= 0){
-        cout << "Current balance = $" << currentBalance << endl;
-        return 0;
+double calculateBalance(double tx){
+    static double runningTotal = 0;
+    runningTotal += tx;
+    if(runningTotal >= 0){
+        displayTotal(runningTotal);
     }
-    else {
-        cout << "You've overdraw your account" << endl;
-        return 1;
+    else{
+        runningTotal -= tx;
+        cout << "DANGER WILL ROBINSON! You're trying to overdraft your account. This transaction was not recorded." << endl;
+        cout << "You cannot spend more than $" << runningTotal << ". Please re-enter your transaction." << endl;
+        displayTotal(runningTotal);
     }
+    return runningTotal;
 }
+
+void displayTotal(double runningTotal){
+    cout << "Your balance is: $" << runningTotal << endl;
+}
+
+
 
 
 // enter transaction, validate to be positive
