@@ -24,64 +24,95 @@ bool isLeapYear(int year);
 int getCenturyValue(int year);
 int getYearValue(int year);
 int getMonthValue(int month, int year);
+string convertDayOfWeek(int numericDayOfWeek);
 
 int main() {
-    int month, date, year, dayOfTheWeek;
-    cout << "Enter a month, date, and year in MM DD YYYY format:" << endl;
-    cin >> month >> date >> year;
-    isLeapYear(year);
-    getCenturyValue(year);
+    // main scope variable declaration
+    int month, day, year, numericDayOfWeek;
+    string dayOfWeek;
+    char continuation;
+    do {
+        // prompt user and read in values
+        cout << "Please enter a date in the format MM DD YYYY" << endl;
+        cin >> month >> day >> year;
+        // calculate numeric day of the week 0-6
+        numericDayOfWeek = (day + getMonthValue(month, year) + getYearValue(year) + getCenturyValue(year)) % 7;
+        // convert numeric day of the week to string day of week
+        cout << month << "/" << day << "/" << year << " is a " << convertDayOfWeek(numericDayOfWeek) << endl;
+        // prompt user to continue entering dates and read in decision
+        cout << "Do you wish to enter another date? Y or N" << endl;
+        cin >> continuation;
+    }while(toupper(continuation) == 'Y');
     return 0;
 }
+// determine if year leap year
 bool isLeapYear(int year){
     if((year % 400 == 0) || ((year % 4 == 0) && year % 100 != 0)){
-        cout << true;
+        return true;
     }
     else {
-        cout << false;
+        return false;
     }
 }
-
+// convert year to century value
 int getCenturyValue(int year){
     int century = year/100;
-    return (3 - (century % 4)) * 2;
+    int remainder = century % 4;
+    int centuryValue = (3 - remainder) * 2;
+    return centuryValue;
 }
+// convert year to year value using last two digits
 int getYearValue(int year){
     int lastTwoDigitsOfYear = year % 100;
-    return (lastTwoDigitsOfYear/4 + lastTwoDigitsOfYear);
+    int yearValue = lastTwoDigitsOfYear / 4 + lastTwoDigitsOfYear;
+    return yearValue;
 }
-
+// calculate month vsalue based on leap year
 int getMonthValue(int month, int year){
+    int monthValue;
     if(isLeapYear(year) == true){
         switch (month) {
-            case 1: return 6; break;
-            case 2: return 2; break;
-            case 3: return 3; break;
-            case 4: return 6; break;
-            case 5: return 1; break;
-            case 6: return 4; break;
-            case 7: return 6; break;
-            case 8: return 2; break;
-            case 9: return 5; break;
-            case 10: return 0; break;
-            case 11: return 3; break;
-            case 12: return 5; break;
+            case 1: monthValue = 6; break;
+            case 2: monthValue = 2; break;
+            case 3: monthValue = 3; break;
+            case 4: monthValue = 6; break;
+            case 5: monthValue = 1; break;
+            case 6: monthValue = 4; break;
+            case 7: monthValue = 6; break;
+            case 8: monthValue = 2; break;
+            case 9: monthValue = 5; break;
+            case 10: monthValue = 0; break;
+            case 11: monthValue = 3; break;
+            case 12: monthValue = 5; break;
         }
     }
     else{
         switch (month) {
-            case 1: return 0; break;
-            case 2: return 3; break;
-            case 3: return 3; break;
-            case 4: return 6; break;
-            case 5: return 1; break;
-            case 6: return 4; break;
-            case 7: return 6; break;
-            case 8: return 2; break;
-            case 9: return 5; break;
-            case 10: return 0; break;
-            case 11: return 3; break;
-            case 12: return 5; break;
+            case 1: monthValue = 0; break;
+            case 2: monthValue = 3; break;
+            case 3: monthValue = 3; break;
+            case 4: monthValue = 6; break;
+            case 5: monthValue = 1; break;
+            case 6: monthValue = 4; break;
+            case 7: monthValue = 6; break;
+            case 8: monthValue = 2; break;
+            case 9: monthValue = 5; break;
+            case 10: monthValue = 0; break;
+            case 11: monthValue = 3; break;
+            case 12: monthValue = 5; break;
         }
+    }
+    return monthValue;
+}
+// convert numeric day of the week to string weekday
+string convertDayOfWeek(int numericDayOfWeek){
+    switch (numericDayOfWeek) {
+        case 0: return "Sunday"; break;
+        case 1: return "Monday"; break;
+        case 2: return "Tuesday"; break;
+        case 3: return "Wednesday"; break;
+        case 4: return "Thursday"; break;
+        case 5: return "Friday"; break;
+        case 6: return "Saturday"; break;
     }
 }
