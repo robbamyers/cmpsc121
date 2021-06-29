@@ -116,3 +116,15 @@ string convertDayOfWeek(int numericDayOfWeek){
         case 6: return "Saturday"; break;
     }
 }
+/* Sample Execution:
+Please enter a date in the format MM DD YYYY
+03 27 1992
+3/27/1992 is a Friday
+Do you wish to enter another date? Y or N
+y
+Please enter a date in the format MM DD YYYY
+06 27 2019
+6/27/2019 is a Thursday
+Do you wish to enter another date? Y or N
+N
+ */
