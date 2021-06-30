@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Projects/Project2/Project2.cpp
+iostream
+-
+
