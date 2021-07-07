@@ -80,7 +80,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity17/main.cpp">
+		<Unit filename="/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity17/Activity17.cpp">
 			<Option target="Activity17"/>
 		</Unit>
 		<Unit filename="/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity17/CMakeLists.txt">
