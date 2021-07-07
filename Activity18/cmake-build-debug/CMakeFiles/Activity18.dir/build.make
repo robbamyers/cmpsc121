@@ -76,27 +76,27 @@ include CMakeFiles/Activity18.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Activity18.dir/flags.make
 
-CMakeFiles/Activity18.dir/main.cpp.o: CMakeFiles/Activity18.dir/flags.make
-CMakeFiles/Activity18.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity18/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Activity18.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Activity18.dir/main.cpp.o -c "/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity18/main.cpp"
+CMakeFiles/Activity18.dir/Activity18.cpp.o: CMakeFiles/Activity18.dir/flags.make
+CMakeFiles/Activity18.dir/Activity18.cpp.o: ../Activity18.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity18/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Activity18.dir/Activity18.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Activity18.dir/Activity18.cpp.o -c "/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity18/Activity18.cpp"
 
-CMakeFiles/Activity18.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Activity18.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity18/main.cpp" > CMakeFiles/Activity18.dir/main.cpp.i
+CMakeFiles/Activity18.dir/Activity18.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Activity18.dir/Activity18.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity18/Activity18.cpp" > CMakeFiles/Activity18.dir/Activity18.cpp.i
 
-CMakeFiles/Activity18.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Activity18.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity18/main.cpp" -o CMakeFiles/Activity18.dir/main.cpp.s
+CMakeFiles/Activity18.dir/Activity18.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Activity18.dir/Activity18.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity18/Activity18.cpp" -o CMakeFiles/Activity18.dir/Activity18.cpp.s
 
 # Object files for target Activity18
 Activity18_OBJECTS = \
-"CMakeFiles/Activity18.dir/main.cpp.o"
+"CMakeFiles/Activity18.dir/Activity18.cpp.o"
 
 # External object files for target Activity18
 Activity18_EXTERNAL_OBJECTS =
 
-Activity18: CMakeFiles/Activity18.dir/main.cpp.o
+Activity18: CMakeFiles/Activity18.dir/Activity18.cpp.o
 Activity18: CMakeFiles/Activity18.dir/build.make
 Activity18: CMakeFiles/Activity18.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity18/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Activity18"
