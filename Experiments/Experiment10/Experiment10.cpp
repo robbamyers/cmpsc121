@@ -73,7 +73,7 @@ int main()
 
 bool validateType(char t){
     if(t != 'P' && t != 'F' && t != 'C' && t != 'M' && t != 'O' && t != 'T'){
-        cout << t << " is not valid. Reeneter" << endl;
+        cout << t << " is not valid. Reenter:" << endl;
         return false;
     }
     return true;
@@ -112,7 +112,7 @@ void getData(char & woodType, int & numPieces, double &thickness,
         woodType = toupper(woodType);
     } while (validateType(woodType) == false);
     if (woodType != 'T') {
-        cout << "Enter numer of pieces and thickness width and length" << endl;
+        cout << "Enter number of pieces and thickness, width, and length:" << endl;
         cin >> numPieces >> thickness >> width >> length;
     }
 }
