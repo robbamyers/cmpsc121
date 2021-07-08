@@ -142,32 +142,32 @@ Activity19/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity19.dir/build.make CMakeFiles/Activity19.dir/build
 .PHONY : Activity19/fast
 
-main.o: main.cpp.o
+Activity19.o: Activity19.cpp.o
 
-.PHONY : main.o
+.PHONY : Activity19.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity19.dir/build.make CMakeFiles/Activity19.dir/main.cpp.o
-.PHONY : main.cpp.o
+Activity19.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity19.dir/build.make CMakeFiles/Activity19.dir/Activity19.cpp.o
+.PHONY : Activity19.cpp.o
 
-main.i: main.cpp.i
+Activity19.i: Activity19.cpp.i
 
-.PHONY : main.i
+.PHONY : Activity19.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity19.dir/build.make CMakeFiles/Activity19.dir/main.cpp.i
-.PHONY : main.cpp.i
+Activity19.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity19.dir/build.make CMakeFiles/Activity19.dir/Activity19.cpp.i
+.PHONY : Activity19.cpp.i
 
-main.s: main.cpp.s
+Activity19.s: Activity19.cpp.s
 
-.PHONY : main.s
+.PHONY : Activity19.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity19.dir/build.make CMakeFiles/Activity19.dir/main.cpp.s
-.PHONY : main.cpp.s
+Activity19.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Activity19.dir/build.make CMakeFiles/Activity19.dir/Activity19.cpp.s
+.PHONY : Activity19.cpp.s
 
 # Help Target
 help:
@@ -178,9 +178,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Activity19"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Activity19.o"
+	@echo "... Activity19.i"
+	@echo "... Activity19.s"
 .PHONY : help
 
 
