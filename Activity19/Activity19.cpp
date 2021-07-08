@@ -2,7 +2,7 @@
 //Class:      	    CMPSC 121
 //Activity:         19
 //File:             /Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity19/Activity19.cpp
-//Purpose: 	        This experiment is designed to develop confidence with functions.
+//Purpose: 	        Practice overloading functions
 /********************************************************************\
 * Academic Integrity Affidavit:                                      *
 *                                                                    *
