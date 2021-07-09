@@ -17,6 +17,7 @@
 \********************************************************************/
 // Sources of logic assistance: None
 #include <iostream>
+#include <string>
 using namespace std;
 // function prototype
 void reverse(string s, int i);
