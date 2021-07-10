@@ -42,9 +42,12 @@ void buildLine(string &s, string field);
 
 
 int main() {
+    // open file
     ifstream inputFile;
     inputFile.open("/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Experiments/Experiment11/badnames.txt");
+    // local scope variable declaration
     string field, n, ss, ph, addr, cty, st, s;
+    // read in one line of the file as a string until the end of the file
     while(getline(inputFile,s)){
         buildLine(s, fixName(extractField(s)));
         buildLine(s, fixSSN(extractField(s)));
@@ -53,9 +56,11 @@ int main() {
         buildLine(s, fixCity(extractField(s)));
         buildLine(s, fixState(extractField(s)));
         buildLine(s, extractField(s));
+        // erase the comma at the end of the line
         s.erase(s.length()-1,1);
         cout << s << endl;
     }
+    // close file
     inputFile.close();
     return 0;
 }
@@ -115,10 +120,6 @@ string extractField(string &s){
     }
     return getField;
 }
-//Extracts a field eg name from the input string and then deletes
-// it and the octothorpe (#) that follows it. Notice string s is
-// passed by reference
 void buildLine(string &s, string field){
     s += field + ",";
 }
-// Concatenates field and a comma to string s
