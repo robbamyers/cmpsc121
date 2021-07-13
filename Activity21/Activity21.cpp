@@ -2,7 +2,7 @@
 //Class:      	    CMPSC 121
 //Activity:   	    21
 //File:             /Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity21/Activity21.cpp
-//Purpose: 	        Using nested for loops
+//Purpose: 	        Practice using data structures
 /********************************************************************\
 * Academic Integrity Affidavit:                                      *
 *                                                                    *
