@@ -2,7 +2,7 @@
 //Class:      	    CMPSC 121
 //Activity:   	    22
 //File:             /Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Activity22/Activity22.cpp
-//Purpose: 	        Practice usinig arrays
+//Purpose: 	        Practice using arrays
 /********************************************************************\
 * Academic Integrity Affidavit:                                      *
 *                                                                    *
