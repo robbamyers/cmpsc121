@@ -94,3 +94,12 @@ void writeReport(double capSales, double eqpSales, double prtSales, double total
     fout << TOTAL << setw(25-TOTAL.length()) << "$" << total << endl;
 
 }
+
+/* Sample Execution:
+       S A L E S   R E P O R T
+Capital Equipment       $24093.18     26.31%
+Expenses Equipment      $22222.80     24.27%
+Small Parts             $45251.98     49.42%
+                        ---------
+Total Sales             $91567.96
+*/
