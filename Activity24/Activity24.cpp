@@ -47,3 +47,8 @@ int checkEven(const vector<int> setOne, const vector<int> setTwo){
     }
     return evenCount;
 }
+
+/* Sample Execution:
+The Vectors contain 127 cells where both values are even
+Process finished with exit code 0
+ */
