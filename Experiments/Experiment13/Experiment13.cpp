@@ -18,6 +18,7 @@
 // Sources of logic assistance: None
 
 #include <iostream>
+#include <iomanip>
 #include <fstream>
 #include <vector>
 #include <ctime>
@@ -31,32 +32,35 @@ struct campaign{
 bool readFile(string c[], int &size);
 void getVotes(int v[], int size);
 void calculatePercents(int v[], double p[], int size);
+void displayResults(string c[], int v[], double p[], int size);
 int main() {
     srand(time(NULL));
     int size = CAPACITY;
-    ifstream fin;
-    fin.open("/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Experiments/Experiment13/candidates.txt");
-    if(fin.fail()){
-        cout << "File failed to open!";
+    campaign president;
+    if(!readFile(president.candidate, size)){
+        cout << "The file failed to open";
     }
-    else{
-        campaign president;
-        for(int i = 0; i < size; i++){
-            fin >> president.candidate[i];
-        }
-        getVotes(president.votes, size);
-        calculatePercents(president.votes, president.percent,size);
-        for(int i = 0; i < size; i++){
-            cout << president.candidate[i] << endl;
-            cout << president.votes[i] << endl;
-            cout << president.percent[i] << endl;
-        }
-    }
+    getVotes(president.votes, size);
+    calculatePercents(president.votes, president.percent,size);
+    displayResults(president.candidate, president.votes, president.percent, size);
+
     return 0;
 }
 
 bool readFile(string c[], int &size){
-
+    ifstream fin;
+    fin.open("/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Experiments/Experiment13/candidates.txt");
+    if(fin.fail()){
+        return false;
+    }
+    else{
+        int i = 0;
+        while(fin >> c[i]){
+            i++;
+        }
+        size = i;
+        return true;
+    }
 }
 void getVotes(int v[], int size){
     for(int i = 0; i < size; i++){
@@ -71,5 +75,21 @@ void calculatePercents(int v[], double p[], int size){
     for(int i = 0; i < size; i++){
         p[i] = (double (v[i]) /  totalVotes * 100);
     }
+}
+void displayResults(string c[], int v[], double p[], int size){
+    cout << setprecision(2);
+    cout << setw(10) << "Candidate" << setw(10) << "Votes" << setw(11) << "Percent" << endl;
+    for(int i = 0; i < size; i++){
+        cout << setw(10) << c[i] << setw(10) << v[i] << setw(10) << p[i] << "%" << endl;
+    }
+    string winner;
+    int highestVoteCount = 0;
+    for(int i = 0; i < size; i++){
+        if(v[i] > highestVoteCount){
+            highestVoteCount = v[i];
+            winner = c[i];
+        }
+    }
+    cout << "The winner is " << winner << "!";
 }
 
