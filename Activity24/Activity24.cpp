@@ -18,8 +18,32 @@
 // Sources of logic assistance: None
 
 #include <iostream>
+#include <vector>
+#include <ctime>
 using namespace std;
-int main() {
+const int SIZE = 500;
 
+int checkEven(const vector<int> setOne, const vector<int> setTwo);
+
+int main() {
+    srand(time(NULL));
+    vector<int> setOne(SIZE);
+    vector<int> setTwo(SIZE);
+    for(int i = 0; i < SIZE; i++){
+        setOne[i] = rand() % 100 + 1;
+        setTwo[i] = rand() % 100 + 1;
+    }
+    int evenCount = checkEven(setOne,setTwo);
+    cout << "The Vectors contain " << evenCount << " cells where both values are even";
     return 0;
+}
+
+int checkEven(const vector<int> setOne, const vector<int> setTwo){
+    int evenCount = 0;
+    for(int i = 0; i < SIZE; i++){
+        if(setOne[i] % 2 == 0 && setTwo[i] % 2 == 0){
+            evenCount++;
+        }
+    }
+    return evenCount;
 }
