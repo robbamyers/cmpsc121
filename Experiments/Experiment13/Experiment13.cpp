@@ -18,9 +18,31 @@
 // Sources of logic assistance: None
 
 #include <iostream>
+#include <fstream>
+#include <vector>
 using namespace std;
+const int SIZE = 25;
+struct campaign{
+    string candidate[SIZE];
+    int votes[SIZE];
+    double percent[SIZE];
+};
+
 
 int main() {
+    ifstream fin;
+    fin.open("/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Experiments/Experiment13/candidates.txt");
+
+    if(fin.fail()){
+        cout << "File failed to open!";
+    }
+    else{
+        campaign president;
+        for(int i = 0; i < SIZE; i++){
+            fin >> president.candidate[i];
+        }
+    }
+
 
     return 0;
 }
