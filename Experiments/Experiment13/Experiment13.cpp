@@ -20,29 +20,56 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <ctime>
 using namespace std;
-const int SIZE = 25;
+const int CAPACITY = 25;
 struct campaign{
-    string candidate[SIZE];
-    int votes[SIZE];
-    double percent[SIZE];
+    string candidate[CAPACITY];
+    int votes[CAPACITY];
+    double percent[CAPACITY];
 };
-
-
+bool readFile(string c[], int &size);
+void getVotes(int v[], int size);
+void calculatePercents(int v[], double p[], int size);
 int main() {
+    srand(time(NULL));
+    int size = CAPACITY;
     ifstream fin;
     fin.open("/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Experiments/Experiment13/candidates.txt");
-
     if(fin.fail()){
         cout << "File failed to open!";
     }
     else{
         campaign president;
-        for(int i = 0; i < SIZE; i++){
+        for(int i = 0; i < size; i++){
             fin >> president.candidate[i];
         }
+        getVotes(president.votes, size);
+        calculatePercents(president.votes, president.percent,size);
+        for(int i = 0; i < size; i++){
+            cout << president.candidate[i] << endl;
+            cout << president.votes[i] << endl;
+            cout << president.percent[i] << endl;
+        }
     }
-
-
     return 0;
 }
+
+bool readFile(string c[], int &size){
+
+}
+void getVotes(int v[], int size){
+    for(int i = 0; i < size; i++){
+        v[i] = rand() % 25000 + 1500;
+    }
+}
+void calculatePercents(int v[], double p[], int size){
+    int totalVotes = 0;
+    for(int i = 0; i < size; i++){
+        totalVotes += v[i];
+    }
+    for(int i = 0; i < size; i++){
+        p[i] = (double (v[i]) /  totalVotes * 100);
+    }
+}
+
