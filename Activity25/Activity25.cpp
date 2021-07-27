@@ -18,11 +18,52 @@
 // Sources of logic assistance: None
 #include <iostream>
 #include <vector>
+#include <ctime>
 using namespace std;
+const int SIZE = 10;
 
 void shellSort(vector<int>& V);
 void swapper(int &a, int &b);
+void fillVector(vector<int>& V);
+void smallest(vector<int> V, int& smallestValue);
+void largest(vector<int> V, int& largestValue);
+void odd(vector<int> V, int& oddCount);
+void even(vector<int> V, int& evenCount);
+void total(vector<int> V, long& totalValues);
+void average(long totalValues, long& averageValues);
+void findInt(vector<int> V, int userInput, int& foundPosition);
+
 int main() {
+    srand(time(NULL));
+    vector<int> V(SIZE);
+    int smallestValue, largestValue,
+        oddCount, evenCount,
+        userInput, foundPosition;
+    long totalValues, averageValues;
+
+    fillVector(V);
+    shellSort(V);
+    smallest(V, smallestValue);
+    largest(V, largestValue);
+    odd(V, oddCount);
+    even(V, evenCount);
+    total(V, totalValues);
+    average(totalValues, averageValues);
+    cout << "The smallest number is: " << smallestValue << endl;
+    cout << "The largest number is: " << largestValue << endl;
+    cout << "The number of odd values is: " << oddCount << endl;
+    cout << "The number of even values is: " << evenCount << endl;
+    cout << "The total of the values is: " << totalValues << endl;
+    cout << "The average of the values is: " << averageValues << endl;
+    cout << "Enter an integer: ";
+    cin >> userInput;
+    findInt(V, userInput, foundPosition);
+    if(foundPosition != 0){
+        cout << userInput << " was found at position " << foundPosition;
+    }
+    else{
+        cout << userInput << " was not found.";
+    }
 
     return 0;
 }
@@ -55,4 +96,47 @@ void swapper(int &a, int &b)
 	temp = a;
 	a = b;
 	b = temp;
+}
+void fillVector(vector<int>& V){
+    for(int i = 0; i < SIZE; i++){
+        V[i] = rand();
+    }
+}
+void smallest(const vector<int> V, int& smallestValue){
+    smallestValue = V[0];
+}
+void largest(const vector<int> V, int& largestValue){
+    largestValue = V[SIZE - 1];
+}
+void odd(const vector<int> V, int& oddCount){
+    oddCount = 0;
+    for(int i = 0; i < SIZE; i++){
+        if(V[i] % 2 != 0 && V[i] % 10 != 0){
+            oddCount++;
+        }
+    }
+}
+void even(const vector<int> V, int& evenCount){
+    evenCount = 0;
+    for(int i = 0; i < SIZE; i++){
+        if(V[i] % 2 == 0){
+            evenCount++;
+        }
+    }
+}
+void total(const vector<int> V, long& totalValues){
+    totalValues = 0;
+    for(int i = 0; i < SIZE; i++){
+        totalValues += V[i];
+    }
+}
+void average(const long totalValues, long& averageValues){
+    averageValues = totalValues/SIZE;
+}
+void findInt(const vector<int> V, const int userInput, int& foundPosition){
+    for(int i = 0; i < SIZE; i++){
+        if(V[i] == userInput){
+            foundPosition = i;
+        }
+    }
 }
