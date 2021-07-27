@@ -20,8 +20,8 @@
 #include <vector>
 #include <ctime>
 using namespace std;
-const int SIZE = 10;
-
+// declare a constant for vector size
+const int SIZE = 5000;
 void shellSort(vector<int>& V);
 void swapper(int &a, int &b);
 void fillVector(vector<int>& V);
@@ -32,15 +32,15 @@ void even(vector<int> V, int& evenCount);
 void total(vector<int> V, long& totalValues);
 void average(long totalValues, long& averageValues);
 void findInt(vector<int> V, int userInput, int& foundPosition);
-
 int main() {
+    // seed random with truly random values
     srand(time(NULL));
+    // vector declaration, variable declaration
     vector<int> V(SIZE);
     int smallestValue, largestValue,
         oddCount, evenCount,
-        userInput, foundPosition;
+        userInput, foundPosition = 0;
     long totalValues, averageValues;
-
     fillVector(V);
     shellSort(V);
     smallest(V, smallestValue);
@@ -55,19 +55,19 @@ int main() {
     cout << "The number of even values is: " << evenCount << endl;
     cout << "The total of the values is: " << totalValues << endl;
     cout << "The average of the values is: " << averageValues << endl;
+    // prompt and read in value from user
     cout << "Enter an integer: ";
     cin >> userInput;
     findInt(V, userInput, foundPosition);
+    // see if found position was updated, if so, display found position to user
     if(foundPosition != 0){
         cout << userInput << " was found at position " << foundPosition;
     }
     else{
         cout << userInput << " was not found.";
     }
-
     return 0;
 }
-
 void shellSort(vector<int>& V)
 {
 	bool flag = true;
@@ -97,17 +97,24 @@ void swapper(int &a, int &b)
 	a = b;
 	b = temp;
 }
+// fill the vector with 5000 random values
 void fillVector(vector<int>& V){
+    // loop through vector and assign position to a random number
     for(int i = 0; i < SIZE; i++){
         V[i] = rand();
     }
 }
+// because vector is already sorted by the time this function is called,
+// assign the value of the first element in the vector to smallestValue
 void smallest(const vector<int> V, int& smallestValue){
     smallestValue = V[0];
 }
+// because vector is already sorted by the time this function is called,
+// assign the value of the last element in the vector to largestValue
 void largest(const vector<int> V, int& largestValue){
     largestValue = V[SIZE - 1];
 }
+// loop through vector and see if number is not evenly divisible by 2 and doesn't end in a 0 (treat 0's as even)
 void odd(const vector<int> V, int& oddCount){
     oddCount = 0;
     for(int i = 0; i < SIZE; i++){
@@ -116,6 +123,7 @@ void odd(const vector<int> V, int& oddCount){
         }
     }
 }
+// loop through vector and see if number is divisible by 2
 void even(const vector<int> V, int& evenCount){
     evenCount = 0;
     for(int i = 0; i < SIZE; i++){
@@ -124,15 +132,19 @@ void even(const vector<int> V, int& evenCount){
         }
     }
 }
+// loop through vector and add each value to totalValues, store in long to ensure it can all fit
 void total(const vector<int> V, long& totalValues){
     totalValues = 0;
     for(int i = 0; i < SIZE; i++){
         totalValues += V[i];
     }
 }
+// divide totalValues by size to calculate averageValues
 void average(const long totalValues, long& averageValues){
     averageValues = totalValues/SIZE;
 }
+// once a user indicates which number they want to search for,
+// look through array and see if the number was generated in the array
 void findInt(const vector<int> V, const int userInput, int& foundPosition){
     for(int i = 0; i < SIZE; i++){
         if(V[i] == userInput){
@@ -140,4 +152,15 @@ void findInt(const vector<int> V, const int userInput, int& foundPosition){
         }
     }
 }
+/* Sample Execution:
+The smallest number is: 582093
+The largest number is: 2147416999
+The number of odd values is: 2527
+The number of even values is: 2473
+The total of the values is: 5438351113167
+The average of the values is: 1087670222
+Enter an integer: 238423452
+238423452 was not found.
+Process finished with exit code 0
+*/
 
