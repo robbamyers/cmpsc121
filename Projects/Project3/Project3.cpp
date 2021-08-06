@@ -1,8 +1,8 @@
 //Author:	        Robert Myers, rfm5594, World Campus
 //Class:      	    CMPSC 121
 //Project:   	    3
-//File:             /Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Experiments/Experiment14/Experiment14.cpp
-//Purpose: 	        The experiment focuses upon the material on vectors covered in the text and in module.
+//File:             /Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Projects/Project3/Project3.cpp
+//Purpose: 	        The Project focuses on the entirety of CMPSC 121
 /********************************************************************\
 * Academic Integrity Affidavit:                                      *
 *                                                                    *
@@ -15,11 +15,10 @@
 * violations may result in zero credit for the assignment, reduced   *
 * credit for the assignment, or course failure.                      *
 \********************************************************************/
-// Sources of logic assistance: None
+// Sources of logic assistance: Professor Yu for Shell Sort algorithm and binary search
 
 #include <iostream>
 #include <vector>
-#include <iomanip>
 #include <fstream>
 #include <string>
 using namespace std;
@@ -29,35 +28,24 @@ struct inventory{
     int partOhb;
     double partCost;
 };
-
 // fills vectors
 bool get_data (vector<inventory> &v);
-
 // Does a binary search
 int bin_search(const string &key, const vector<inventory> &v);
-
 // Asks user for a part number to search for
 string get_target();
-
 // gets remaining info to add a part number
 void get_more_data(char& class_in,int& part_ohb_in,double& part_cost_in);
-
 // Inserts part number data into vectors
 void insert_data (vector<inventory> &v, string part_in, char class_in, int part_ohb_in, double part_cost_in);
-
 // Displays info on part number
 void display (const vector<inventory> &v, int finder);
-
 // sorts vectors (Calls swapper)
-void sort (vector <string>& part_number, vector <char>& part_class, vector <int>& part_ohb, vector <double>& part_cost);
-
+void sort (vector<inventory> &v);
 // prints search stats
 void print_stats(int searches, int good, int bad);
-
 // writes out file when program ends, so additions are saved to file
-void put_data (const vector <string>& part_number, const vector <char>& part_class, const vector <int>& part_ohb,
-               const vector <double>& part_cost);
-
+void put_data (const vector<inventory> &v);
 // templated swap function – Swaps two items in a vector of any type
 // Put this BEFORE main()  Called from sort function
 template <class CType>
@@ -69,19 +57,23 @@ void swapper (CType& a, CType & b)
     b= temp;
 }
 
-
 int main() {
+    // declare vector of structs
     vector<inventory> lineItem;
+    // check for file open failure, else get data
     if(!get_data(lineItem)){
         cout << "Problem opening the file." << endl;
     }
     else{
         char continuation;
         int unsuccessfulSearch = 0, successfulSearch = 0;
+        // continuation loop
         do{
             string target;
             cout << "What part number would you like to look for?" << endl;
             target = get_target();
+            // sort prior to binary search
+            sort(lineItem);
             int finder = bin_search(target,lineItem);
             if(finder == -1){
                 unsuccessfulSearch++;
@@ -107,19 +99,21 @@ int main() {
             else{
                 successfulSearch++;
                 display(lineItem, finder);
+                // clear target value
                 target = "";
                 cout << "Would you like to do another search? <Y or N>" << endl;
                 cin >> continuation;
                 cin.ignore(1);
             }
         }while(toupper(continuation) == 'Y');
-        cout << "There were " << (unsuccessfulSearch + successfulSearch) << " searched performed today." << endl;
-        cout << successfulSearch << " of them were successful" << endl;
-        cout << unsuccessfulSearch << " of them were not in the system" << endl;
+        int total = unsuccessfulSearch + successfulSearch;
+        print_stats(total, successfulSearch, unsuccessfulSearch);
+        sort(lineItem);
+        put_data(lineItem);
+        cout << "Files were updated";
     }
     return 0;
 }
-
 bool get_data (vector<inventory> &v){
     fstream fin;
     fin.open("/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Projects/Project3/parts.txt");
@@ -142,13 +136,25 @@ string get_target(){
     return target;
 }
 int bin_search(const string &key, const vector<inventory> &v){
-    int location = -1;
-    for(int i = 0; i < v.size(); i++){
-        if(key == v[i].partNumber){
-            location = i;
-        }
+    bool found = false;
+    int first, mid, last, return_val;
+    first = 0;
+    last = v.size()-1;
+    while((first <= last) && (!found)){
+        mid = (first + last) / 2;
+        if (key == v[mid].partNumber)
+            found = true;
+        else
+            if (key < v[mid].partNumber)
+                last = mid - 1;
+            else
+                first = mid + 1;
     }
-    return location;
+    if(found)
+        return_val = mid;
+    else
+        return_val = -1;
+    return return_val;
 }
 void display (const vector<inventory> &v, int finder){
     cout << "There are " << v[finder].partOhb << " of Part Number " << v[finder].partNumber << " in inventory. It is a class " << v[finder].partClass << " part.\n";
@@ -171,5 +177,101 @@ void insert_data (vector<inventory> &v, string part_in, char class_in, int part_
     temp.partCost = part_cost_in;
     v.push_back(temp);
 }
+void print_stats(int searches, int good, int bad){
+    cout << "There were " << searches << " searched performed today." << endl;
+    cout << good << " of them were successful" << endl;
+    cout << bad << " of them were not in the system" << endl;
+}
+void sort (vector<inventory> &v){
+    bool flag = true;
+    int i;
+    int d = v.size();
+    while(flag ||(d>1)) // bool flag
+        {
+        flag = false;  //set flag to false
+        d = (d+1) / 2;
+        for (i = 0; i < (v.size() - d); i++){
+            if (v[i+d].partNumber < v[i].partNumber){
+                swapper(v[i+d].partNumber, v[i].partNumber);
+                swapper(v[i+d].partClass, v[i].partClass);
+                swapper(v[i+d].partOhb, v[i].partOhb);
+                swapper(v[i+d].partCost, v[i].partCost);
+                flag = true; //tells swap has occurred
+            }
+        }
+        }
+}
+void put_data (const vector<inventory> &v){
+    for(int i = 0; i < v.size(); i++){
+        ofstream fileOut;
+        fileOut.open("/Users/robertmyers/OneDrive - The Pennsylvania State University/Summer 2021/cmpsc121/Projects/Project3/parts.txt");
+        for(int i = 0; i < v.size(); i++){
+            fileOut << v[i].partNumber << " " << v[i].partClass << " " << v[i].partOhb << " " << v[i].partCost << endl;
+        }
+    }
+}
 
+/* Sample Execution:
+What part number would you like to look for?
+P-13682
+There are 14 of Part Number P-13682 in inventory. It is a class D part.
+The cost is $25.56
+The value is $357.84
+Would you like to do another search? <Y or N>
+y
+What part number would you like to look for?
+P-14702
+There are 38 of Part Number P-14702 in inventory. It is a class A part.
+The cost is $92.06
+The value is $3498.28
+Would you like to do another search? <Y or N>
+y
+What part number would you like to look for?
+P-38806
+There are 42 of Part Number P-38806 in inventory. It is a class C part.
+The cost is $31.39
+The value is $1318.38
+Would you like to do another search? <Y or N>
+y
+What part number would you like to look for?
+P-00008
+Add this part?
+y
+What class is this part number in?
+A
+What is the on hand balance of this part?
+12
+What is the cost of this part?
+3.4
+Would you like to do another search? <Y or N>
+y
+What part number would you like to look for?
+P-00007
+Add this part?
+y
+What class is this part number in?
+B
+What is the on hand balance of this part?
+56
+What is the cost of this part?
+7.8
+Would you like to do another search? <Y or N>
+y
+What part number would you like to look for?
+P-00001
+Add this part?
+y
+What class is this part number in?
+C
+What is the on hand balance of this part?
+99
+What is the cost of this part?
+99.99
+Would you like to do another search? <Y or N>
+n
+There were 6 searched performed today.
+3 of them were successful
+3 of them were not in the system
 
+Process finished with exit code 0
+ */
